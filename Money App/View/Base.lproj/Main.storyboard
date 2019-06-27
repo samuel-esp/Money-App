@@ -128,10 +128,19 @@
         <!--Item-->
         <scene sceneID="mY2-oB-Lze">
             <objects>
-                <viewController id="N8R-AW-0Ub" sceneMemberID="viewController">
+                <viewController id="N8R-AW-0Ub" customClass="SecondViewController" customModule="Money_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lpt-Qw-mVe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-5b-8XS">
+                                <rect key="frame" x="16" y="73" width="140" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="15w-H1-DjU"/>
                     </view>
@@ -139,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ui4-CE-c7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2143" y="132"/>
+            <point key="canvasLocation" x="2141.5999999999999" y="131.52709359605913"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tMV-7a-YIu">
