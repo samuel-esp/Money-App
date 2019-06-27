@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9911912122C55ECF0061230A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911912022C55ECF0061230A /* Item.swift */; };
+		9911912322C561FE0061230A /* ItemsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911912222C561FE0061230A /* ItemsCollection.swift */; };
+		9911912722C569510061230A /* MoneyHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911912622C569510061230A /* MoneyHistoryTableViewController.swift */; };
+		9911912922C5696C0061230A /* MoneyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911912822C5696C0061230A /* MoneyHistoryTableViewCell.swift */; };
 		9920727222C426540002AA2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9920727122C426540002AA2E /* AppDelegate.swift */; };
 		9920727422C426540002AA2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9920727322C426540002AA2E /* ViewController.swift */; };
 		9920727722C426540002AA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9920727522C426540002AA2E /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9911912022C55ECF0061230A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9911912222C561FE0061230A /* ItemsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollection.swift; sourceTree = "<group>"; };
+		9911912622C569510061230A /* MoneyHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyHistoryTableViewController.swift; sourceTree = "<group>"; };
+		9911912822C5696C0061230A /* MoneyHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		9920726E22C426540002AA2E /* Money App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9920727122C426540002AA2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9920727322C426540002AA2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +82,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9911911D22C55E480061230A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9911912022C55ECF0061230A /* Item.swift */,
+				9911912222C561FE0061230A /* ItemsCollection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9911911E22C55E510061230A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9911911F22C55E580061230A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9920727322C426540002AA2E /* ViewController.swift */,
+				9911912622C569510061230A /* MoneyHistoryTableViewController.swift */,
+				9911912822C5696C0061230A /* MoneyHistoryTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9920726522C426530002AA2E = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +131,10 @@
 		9920727022C426540002AA2E /* Money App */ = {
 			isa = PBXGroup;
 			children = (
+				9911911F22C55E580061230A /* Controller */,
+				9911911E22C55E510061230A /* View */,
+				9911911D22C55E480061230A /* Model */,
 				9920727122C426540002AA2E /* AppDelegate.swift */,
-				9920727322C426540002AA2E /* ViewController.swift */,
 				9920727522C426540002AA2E /* Main.storyboard */,
 				9920727822C4265A0002AA2E /* Assets.xcassets */,
 				9920727A22C4265A0002AA2E /* LaunchScreen.storyboard */,
@@ -257,6 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9920727422C426540002AA2E /* ViewController.swift in Sources */,
+				9911912922C5696C0061230A /* MoneyHistoryTableViewCell.swift in Sources */,
+				9911912122C55ECF0061230A /* Item.swift in Sources */,
+				9911912322C561FE0061230A /* ItemsCollection.swift in Sources */,
+				9911912722C569510061230A /* MoneyHistoryTableViewController.swift in Sources */,
 				9920727222C426540002AA2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
