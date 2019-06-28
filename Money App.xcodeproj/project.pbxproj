@@ -18,6 +18,10 @@
 		9920727C22C4265A0002AA2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9920727A22C4265A0002AA2E /* LaunchScreen.storyboard */; };
 		9920728722C4265A0002AA2E /* Money_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9920728622C4265A0002AA2E /* Money_AppTests.swift */; };
 		9920729222C4265A0002AA2E /* Money_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9920729122C4265A0002AA2E /* Money_AppUITests.swift */; };
+		99EC18F722C6BE28003E31B5 /* LogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC18F622C6BE27003E31B5 /* LogoViewController.swift */; };
+		99EC18F922C6BE34003E31B5 /* FirstAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC18F822C6BE34003E31B5 /* FirstAccessViewController.swift */; };
+		99EC18FB22C6BE49003E31B5 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC18FA22C6BE49003E31B5 /* AddItemViewController.swift */; };
+		99EC18FD22C6BEED003E31B5 /* Username.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC18FC22C6BEED003E31B5 /* Username.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		9920728D22C4265A0002AA2E /* Money AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Money AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9920729122C4265A0002AA2E /* Money_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money_AppUITests.swift; sourceTree = "<group>"; };
 		9920729322C4265A0002AA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99EC18F622C6BE27003E31B5 /* LogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewController.swift; sourceTree = "<group>"; };
+		99EC18F822C6BE34003E31B5 /* FirstAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAccessViewController.swift; sourceTree = "<group>"; };
+		99EC18FA22C6BE49003E31B5 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		99EC18FC22C6BEED003E31B5 /* Username.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Username.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,7 @@
 			children = (
 				9911912022C55ECF0061230A /* Item.swift */,
 				9911912222C561FE0061230A /* ItemsCollection.swift */,
+				99EC18FC22C6BEED003E31B5 /* Username.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +115,9 @@
 				9920727322C426540002AA2E /* ViewController.swift */,
 				9911912822C5696C0061230A /* MoneyHistoryTableViewCell.swift */,
 				9911912A22C582E30061230A /* SecondViewController.swift */,
+				99EC18F622C6BE27003E31B5 /* LogoViewController.swift */,
+				99EC18F822C6BE34003E31B5 /* FirstAccessViewController.swift */,
+				99EC18FA22C6BE49003E31B5 /* AddItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,8 +305,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9911912B22C582E30061230A /* SecondViewController.swift in Sources */,
+				99EC18FD22C6BEED003E31B5 /* Username.swift in Sources */,
 				9920727422C426540002AA2E /* ViewController.swift in Sources */,
 				9911912922C5696C0061230A /* MoneyHistoryTableViewCell.swift in Sources */,
+				99EC18F922C6BE34003E31B5 /* FirstAccessViewController.swift in Sources */,
+				99EC18F722C6BE28003E31B5 /* LogoViewController.swift in Sources */,
+				99EC18FB22C6BE49003E31B5 /* AddItemViewController.swift in Sources */,
 				9911912122C55ECF0061230A /* Item.swift in Sources */,
 				9911912322C561FE0061230A /* ItemsCollection.swift in Sources */,
 				9920727222C426540002AA2E /* AppDelegate.swift in Sources */,
