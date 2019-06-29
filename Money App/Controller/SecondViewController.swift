@@ -35,9 +35,9 @@ class SecondViewController: UIViewController {
         max = user.savings
         labelValue.text = "\(available())$"
         usernameLabel.text = "Hey \(user.user)!!"
-        totalTransactionsValue.text = "\(transactionsNumber()) $"
-        gainValue.text = "\(gainTransactions()) $"
-        lossValue.text = "\(lossTransactions()) $"
+        totalTransactionsValue.text = "\(transactionsNumber())"
+        gainValue.text = "\(gainTransactions())"
+        lossValue.text = "\(lossTransactions())"
         balanceValue.text = "\(maximumPeak()) $"
         balanceMinimum.text = "\(minimumPeak()) $"
         // Do any additional setup after loading the view.

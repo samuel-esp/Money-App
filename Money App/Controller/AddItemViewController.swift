@@ -28,7 +28,7 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     
     override func viewDidLoad() {
-        isGain = false
+        isGain = true
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -76,7 +76,14 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 secondVC.user = yourUser
                 
             }else{
-                preconditionFailure("error")
+                let barViewControllers = segue.destination as! UITabBarController
+                let secondVC = barViewControllers.viewControllers![1] as! SecondViewController
+                let firstVC = barViewControllers.viewControllers![0] as! ViewController
+                self.itemsCollection.itemArray.append(Item(name: "Unknown", date: datePicker.date, valueDollars: 0.0, isGain: isGain))
+                firstVC.itemsCollection = itemsCollection
+                secondVC.items = itemsCollection
+                firstVC.user = yourUser
+                secondVC.user = yourUser
             }
         default:
             preconditionFailure("error")
@@ -85,14 +92,5 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
