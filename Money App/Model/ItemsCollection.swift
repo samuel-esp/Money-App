@@ -12,7 +12,7 @@ class ItemsCollection: NSObject {
     
     var itemArray = [Item]()
 
-    @discardableResult func createItem(name: String, date: Date, valueDollars: Int, isGain: Bool) -> Item{
+    @discardableResult func createItem(name: String, date: Date, valueDollars: Double, isGain: Bool) -> Item{
         
         let item = Item(name: name, date: date, valueDollars: valueDollars, isGain: isGain)
         
@@ -44,15 +44,7 @@ class ItemsCollection: NSObject {
     
     
     override init() {
-        
         super.init()
-        
-        createItem(name: "Playstation", date: Date(), valueDollars: 350, isGain: false)
-        createItem(name: "Harry Potter", date: Date(), valueDollars: 20, isGain: false)
-        createItem(name: "Iphone", date: Date(), valueDollars: 900, isGain: false)
-        createItem(name: "Holiday", date: Date(), valueDollars: 800, isGain: false)
-                createItem(name: "Work Bonus", date: Date(), valueDollars: 2000, isGain: true)
-        
     }
     
 }

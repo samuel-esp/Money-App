@@ -10,10 +10,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    var items = ViewController().itemsCollection
+    //var items = ViewController().itemsCollection
+    var items: ItemsCollection!
     var user: Username!
-    var max: Double = 0.0
-    var min: Double = 0.0
+    var max: Double!
+    var min: Double!
     var transactions: Int = 0
     var gains: Int = 0
     var loss: Int = 0
@@ -28,59 +29,67 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var totalTransactionsValue: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        max = maximumPeak()
+        min = user.savings
+        max = user.savings
+        labelValue.text = "\(available())$"
+        usernameLabel.text = "Hey \(user.user)!!"
         totalTransactionsValue.text = "\(transactionsNumber()) $"
         gainValue.text = "\(gainTransactions()) $"
         lossValue.text = "\(lossTransactions()) $"
         balanceValue.text = "\(maximumPeak()) $"
         balanceMinimum.text = "\(minimumPeak()) $"
-        usernameLabel.text = "Hey \(user.user)!!"
-        labelValue.text = "\(user.savings)$"
         // Do any additional setup after loading the view.
+    }
+    
+    func available() -> Double{
+        
+        var record = user.savings
+        
+        if(items.itemArray.count==0){
+            return record
+    }
+        
+        for elem in items.itemArray{
+            
+            if(elem.isGain){
+                record = record + elem.valueDollars
+            }else{
+                if(record<0){
+                    record = 0.0
+                    return record
+                }
+                else{
+                    record = record - elem.valueDollars
+                }
+            }
+            
+        }
+        
+        return record
+        
     }
     
     func maximumPeak() -> Double {
         
-        var record: Double = 0.0
-        
-        if(items.itemArray.count == 0){
-            return 0
+        if(available()>max){
+            return available()
         }
-        
-        for elem in items.itemArray{
-            
-            record = Double(elem.valueDollars) + record
-            
+        else{
+            return user.savings
         }
-        
-        if(record>max){
-            return record
-        }
-        
-        return max
         
     }
     
     func minimumPeak() -> Double {
         
-        var record: Double = 0.0
-        
-        if(items.itemArray.count == 0){
-            return 0
+        if(available()<min){
+            return available()
         }
-        
-        for elem in items.itemArray{
-            
-            record = Double(elem.valueDollars) + record
-            
+        else{
+            return user.savings
         }
-        
-        if(record<min){
-            return record
-        }
-        
-        return min
         
     }
     
@@ -123,7 +132,6 @@ class SecondViewController: UIViewController {
         return i
         
     }
-    
 
     
 

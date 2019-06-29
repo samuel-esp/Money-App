@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var itemsCollection = ItemsCollection()
+    //var itemsCollection = ItemsCollection()
+    var itemsCollection: ItemsCollection!
+    var user: Username!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
+        performSegue(withIdentifier: "add", sender: self)
         
     }
     
@@ -51,18 +54,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let data = dateFormatter.string(from: element.date)
         
         cell.date.text = data
-        cell.value.text = "\(element.valueDollars)$"
         
         if(element.isGain){
             cell.value.textColor = .green
+            cell.value.text = "+\(element.valueDollars)$"
         }else{
             cell.value.textColor = .red
+            cell.value.text = "-\(element.valueDollars)$"
         }
         
         return cell
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "add":
+            
+            let AddVC = segue.destination as! AddItemViewController
+            AddVC.yourUser = user
+            AddVC.itemsCollection = itemsCollection
+            
+            
+        default:
+            preconditionFailure()
+        }
+    }
+    
 }
+
+
 

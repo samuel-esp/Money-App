@@ -14,19 +14,13 @@ class LogoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if(isFirstAccess){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
-            self.performSegue(withIdentifier: "firstAccess", sender: nil)
-            }
-            isFirstAccess = false
-        }else{
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
-            self.performSegue(withIdentifier: "tabBarSegue", sender: nil)
-            }}
+        let timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(moveOn), userInfo: nil, repeats: false)
+
     }
     
-
+    @objc func moveOn(){
+        self.performSegue(withIdentifier:"firstAccess",sender: self)
+    }
     /*
     // MARK: - Navigation
 

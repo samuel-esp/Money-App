@@ -12,10 +12,10 @@ class Item: NSObject {
     
     var name: String
     var date: Date
-    var valueDollars: Int
+    var valueDollars: Double
     var isGain: Bool
     
-    init(name: String, date: Date, valueDollars: Int, isGain: Bool) {
+    init(name: String, date: Date, valueDollars: Double, isGain: Bool) {
         
         self.name = name
         self.date = date
