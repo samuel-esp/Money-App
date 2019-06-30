@@ -15,7 +15,7 @@ class ItemsCollection: NSObject {
 
         let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentsDirectories.first!
-        return documentDirectory.appendingPathComponent("items.archives")
+        return documentDirectory.appendingPathComponent("items.archivesf")
         
     }()
 

@@ -16,13 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        /*if !UserDefaults.standard.bool(forKey: "isFirstTime"){
-        UserDefaults.standard.set(true, forKey: "isFirstTime")*/
-        
-        let firstAccessVC = window?.rootViewController as! FirstAccessViewController
+        if !UserDefaults.standard.bool(forKey: "isFirstTime"){
+        UserDefaults.standard.set(true, forKey: "isFirstTime")
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let firstAccessVC = storyboard.instantiateViewController(withIdentifier: "firstAccess") as! FirstAccessViewController
+        self.window?.rootViewController = firstAccessVC
         firstAccessVC.itemsCollection = itemsCollection
         
-        //}
+        }else{
+            window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController
+            self.window?.rootViewController = tabBar
+            let firstNav = tabBar.viewControllers![0] as! UINavigationController
+            let secondNav = tabBar.viewControllers![1] as! UINavigationController
+            let firstVC = firstNav.viewControllers[0] as! ViewController
+            let secondVC = secondNav.viewControllers[0] as! SecondViewController
+            firstVC.itemsCollection = itemsCollection
+            secondVC.items = itemsCollection
+        }
         
         return true
     }
