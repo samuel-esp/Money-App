@@ -51,6 +51,8 @@ class SecondViewController: UIViewController {
         lossValue.text = "\(lossTransactions())"
         balanceValue.text = "\(maximumPeak()) $"
         balanceMinimum.text = "\(minimumPeak()) $"
+        min = minimumPeak()
+        max = maximumPeak()
     }
     
     func available() -> Double{
