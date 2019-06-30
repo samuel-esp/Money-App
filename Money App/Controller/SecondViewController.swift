@@ -10,7 +10,6 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    //var items = ViewController().itemsCollection
     var items: ItemsCollection!
     var user: Username!
     var max: Double!
@@ -40,7 +39,16 @@ class SecondViewController: UIViewController {
         lossValue.text = "\(lossTransactions())"
         balanceValue.text = "\(maximumPeak()) $"
         balanceMinimum.text = "\(minimumPeak()) $"
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        labelValue.text = "\(available())$"
+        usernameLabel.text = "Hey \(user.user)!!"
+        totalTransactionsValue.text = "\(transactionsNumber())"
+        gainValue.text = "\(gainTransactions())"
+        lossValue.text = "\(lossTransactions())"
+        balanceValue.text = "\(maximumPeak()) $"
+        balanceMinimum.text = "\(minimumPeak()) $"
     }
     
     func available() -> Double{

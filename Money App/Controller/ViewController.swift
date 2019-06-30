@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SendDataDelegate {
+    
+    func didSendDataBack(itemCollections: ItemsCollection) {
+        itemsCollection.itemArray = itemCollections.itemArray
+    }
+    
 
-    //var itemsCollection = ItemsCollection()
     var itemsCollection: ItemsCollection!
     var user: Username!
     
@@ -23,16 +27,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "add", sender: self)
+                performSegue(withIdentifier: "add", sender: self)
         
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     
@@ -71,14 +74,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch segue.identifier {
         case "add":
             
-            let AddVC = segue.destination as! AddItemViewController
-            AddVC.yourUser = user
-            AddVC.itemsCollection = itemsCollection
-            
+            let addVC = segue.destination as! AddItemViewController
+            addVC.itemsCollection = itemsCollection
+            addVC.sendDataDelegate = self
             
         default:
             preconditionFailure()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
 }

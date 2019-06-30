@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol SendDataDelegate {
+    
+    func didSendDataBack(itemCollections: ItemsCollection)
+    
+}
+
 class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
 
@@ -15,24 +21,32 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var valueField: UITextField!
+    var sendDataDelegate: SendDataDelegate?
     var pickerData: [String] = ["Gained", "Lost"]
     var itemsCollection: ItemsCollection!
-    var yourUser: Username!
     var isGain: Bool!
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "newItem", sender: self)
+        var item: Item!
+        
+        if let name = nameField.text, let value = valueField.text{
+            item = Item(name: name, date: datePicker.date, valueDollars: Double(value)!, isGain: isGain)
+        }else{
+            item = Item(name: "NoName", date: datePicker.date, valueDollars: 0.0, isGain: true)
+        }
+        
+        itemsCollection.itemArray.append(item)
+        sendDataDelegate?.didSendDataBack(itemCollections: itemsCollection)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
-    
     override func viewDidLoad() {
-        isGain = true
         super.viewDidLoad()
+        isGain = true
         pickerView.delegate = self
         pickerView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -58,39 +72,5 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
         
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        switch segue.identifier {
-        case "newItem":
-            
-            if let name = nameField.text, let value = valueField.text{
-                let barViewControllers = segue.destination as! UITabBarController
-                let secondVC = barViewControllers.viewControllers![1] as! SecondViewController
-                let firstVC = barViewControllers.viewControllers![0] as! ViewController
-                self.itemsCollection.itemArray.append(Item(name: name, date: datePicker.date, valueDollars: Double(value)!, isGain: isGain))
-                firstVC.itemsCollection = itemsCollection
-                secondVC.items = itemsCollection
-                firstVC.user = yourUser
-                secondVC.user = yourUser
-                
-            }else{
-                let barViewControllers = segue.destination as! UITabBarController
-                let secondVC = barViewControllers.viewControllers![1] as! SecondViewController
-                let firstVC = barViewControllers.viewControllers![0] as! ViewController
-                self.itemsCollection.itemArray.append(Item(name: "Unknown", date: datePicker.date, valueDollars: 0.0, isGain: isGain))
-                firstVC.itemsCollection = itemsCollection
-                secondVC.items = itemsCollection
-                firstVC.user = yourUser
-                secondVC.user = yourUser
-            }
-        default:
-            preconditionFailure("error")
-        }
-        
-        
-    }
-
 
 }

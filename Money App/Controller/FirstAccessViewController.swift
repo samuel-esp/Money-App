@@ -10,7 +10,7 @@ import UIKit
 
 class FirstAccessViewController: UIViewController {
     
-    var itemsCollection = ItemsCollection()
+    var itemsCollection: ItemsCollection!
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var savingsTextField: UITextField!
@@ -37,12 +37,14 @@ class FirstAccessViewController: UIViewController {
                 let savingsDouble = Double(savings)
                 let user = Username(user: name, savings: savingsDouble!)
                 let barViewControllers = segue.destination as! UITabBarController
-                let secondVC = barViewControllers.viewControllers![1] as! SecondViewController
-                let firstVC = barViewControllers.viewControllers![0] as! ViewController
+                let navControllerOne = barViewControllers.viewControllers![0] as! UINavigationController
+                let navControllerTwo = barViewControllers.viewControllers![1] as! UINavigationController
+                let secondVC = navControllerTwo.viewControllers[0] as! SecondViewController
+                let firstVC = navControllerOne.viewControllers[0] as! ViewController
                 firstVC.user = user
-                firstVC.itemsCollection = self.itemsCollection
+                firstVC.itemsCollection = itemsCollection
                 secondVC.user = user
-                secondVC.items = self.itemsCollection
+                secondVC.items = itemsCollection
                 
             }else{
                 
@@ -50,7 +52,6 @@ class FirstAccessViewController: UIViewController {
                 let barViewControllers = segue.destination as! UITabBarController
                 let secondVC = barViewControllers.viewControllers![1] as! SecondViewController
                 let firstVC = barViewControllers.viewControllers![0] as! ViewController
-                
                 firstVC.user = user
                 firstVC.itemsCollection = itemsCollection
                 secondVC.user = user
