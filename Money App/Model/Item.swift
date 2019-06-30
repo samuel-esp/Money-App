@@ -35,9 +35,8 @@ class Item: NSObject, NSCoding {
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObject(forKey: "name") as! String
         date = aDecoder.decodeObject(forKey: "date") as! Date
-        valueDollars = aDecoder.decodeObject(forKey: "valueDollars") as? Double ?? 0
-        isGain = aDecoder.decodeObject(forKey: "isGain") as? Bool ?? true
-        
+        valueDollars = aDecoder.decodeDouble(forKey: "valueDollars") as Double
+        isGain = aDecoder.decodeBool(forKey: "isGain") as Bool
         super.init()
     }
     

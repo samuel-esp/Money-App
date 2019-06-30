@@ -28,9 +28,7 @@ class FirstAccessViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        
-        let result = save()
-        print(result)
+
         performSegue(withIdentifier: "firstVC", sender: self)
         
         
@@ -73,15 +71,8 @@ class FirstAccessViewController: UIViewController {
     
         }
     
-    func save() -> Bool{
-        return NSKeyedArchiver.archiveRootObject(user, toFile: user.userArchive.path)
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
-        let result = save()
-        if(result){
-            print(result)
-        }
+
     }
         
         

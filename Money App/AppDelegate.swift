@@ -46,15 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        let result = itemsCollection.save()
-        if(result){
-            print("saved")
-        }
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
        let result = itemsCollection.save()
         if(result){
+            print("saved")
+        }
+        let userResult = save()
+        if(userResult){
             print("saved")
         }
     }
@@ -68,8 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        let result = itemsCollection.save()
-        if(result){
+        let itemResult = itemsCollection.save()
+        if(itemResult){
+            print("saved")
+        }
+        let userResult = save()
+        if(userResult){
             print("saved")
         }
         
@@ -80,6 +85,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             user = archived
         }
 
+    }
+    
+    func save() -> Bool{
+        return NSKeyedArchiver.archiveRootObject(user, toFile: user.userArchive.path)
     }
 
 

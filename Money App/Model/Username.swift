@@ -32,7 +32,7 @@ class Username: NSObject, NSCoding{
     
     required init?(coder aDecoder: NSCoder) {
         user = aDecoder.decodeObject(forKey: "user") as! String
-        savings = aDecoder.decodeObject(forKey: "savings") as? Double ?? 0.0
+        savings = aDecoder.decodeDouble(forKey: "savings") as Double
         super.init()
     }
     
