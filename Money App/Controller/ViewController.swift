@@ -22,7 +22,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
         
-        
+        if isEditing{
+            
+            sender.setTitle("edit", for: .normal)
+            
+            setEditing(false, animated: true)
+            
+        }else{
+            
+            sender.setTitle("done", for: .normal)
+            
+            setEditing(true, animated: true)
+            
+        }
         
     }
     
@@ -81,6 +93,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         default:
             preconditionFailure()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete{
+            
+            let item = itemsCollection.itemArray[indexPath.row]
+            itemsCollection.deleteItem(item: item)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

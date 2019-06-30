@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgY-Nr-fVn">
-                                <rect key="frame" x="20" y="16" width="125" height="44"/>
+                                <rect key="frame" x="20" y="16" width="253" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="Dd0-Fa-F2P"/>
+                                    <constraint firstAttribute="width" constant="253" id="Dd0-Fa-F2P"/>
                                     <constraint firstAttribute="height" constant="44" id="gIz-dJ-21r"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -30,7 +30,6 @@
                                 </state>
                                 <connections>
                                     <action selector="editButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vvi-OV-zij"/>
-                                    <segue destination="EWr-LK-MrK" kind="show" id="v4z-wE-1nG"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXv-5d-8n9">
@@ -135,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="901"/>
+            <point key="canvasLocation" x="140.57971014492756" y="900.66964285714278"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="NWb-LO-Ryz">
@@ -615,7 +614,4 @@
         <image name="listBlu" width="24" height="24"/>
         <image name="userBlu" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Sry-rx-s7Q"/>
-    </inferredMetricsTieBreakers>
 </document>
