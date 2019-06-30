@@ -21,6 +21,11 @@ class FirstAccessViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         

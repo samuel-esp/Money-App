@@ -217,7 +217,11 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.28235294119999998" green="0.45098039220000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="eAa-Hd-YmB"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ldZ-SK-fYd" appends="YES" id="bf9-Ez-QS2"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="uza-ON-Op6" id="gcF-HU-shG"/>
@@ -227,6 +231,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89Q-zZ-LRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ldZ-SK-fYd">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="EWr-LK-MrK" id="hVn-QY-95N"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="141" y="1657"/>
         </scene>
@@ -501,6 +510,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.28235294117647058" green="0.45098039215686275" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="h24-0M-hkg" firstAttribute="top" secondItem="Ptl-8z-67g" secondAttribute="top" constant="151" id="7Ta-ok-vZp"/>
                             <constraint firstItem="unj-Nj-aJd" firstAttribute="leading" secondItem="Ptl-8z-67g" secondAttribute="leading" constant="137" id="CPA-o6-urm"/>
@@ -517,6 +527,9 @@
                             <constraint firstItem="Ptl-8z-67g" firstAttribute="trailing" secondItem="h24-0M-hkg" secondAttribute="trailing" constant="52" id="mPn-4t-IFF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ptl-8z-67g"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="MyJ-Lz-hAu" appends="YES" id="ZYU-kU-4VH"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="wLZ-BM-kCk" id="bbC-yw-sbX"/>
@@ -524,6 +537,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyF-0W-R9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MyJ-Lz-hAu">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="upM-gW-Juh" id="7Ju-bo-DHV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1613" y="-1662"/>
         </scene>

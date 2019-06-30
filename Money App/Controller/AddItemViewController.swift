@@ -26,6 +26,12 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var itemsCollection: ItemsCollection!
     var isGain: Bool!
     
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
         var item: Item!
