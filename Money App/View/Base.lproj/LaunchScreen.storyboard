@@ -24,8 +24,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rG-T0-JpK">
-                                <rect key="frame" x="108" y="410" width="159" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rG-T0-JpK">
+                                <rect key="frame" x="16" y="410" width="343" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="gpM-RP-6h6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,19 +36,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28235294117647058" green="0.45098039215686275" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8rG-T0-JpK" secondAttribute="trailing" constant="108" id="3r0-lP-4Kc"/>
-                            <constraint firstItem="8rG-T0-JpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="FeE-b3-KOh"/>
-                            <constraint firstItem="8rG-T0-JpK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="390" id="NMQ-mm-5G0"/>
-                            <constraint firstItem="AQ7-3I-hCj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cUv-4l-Q75"/>
-                            <constraint firstItem="AQ7-3I-hCj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="sm7-iV-Ktg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8rG-T0-JpK" secondAttribute="bottom" constant="221" id="wtZ-zg-4ea"/>
+                            <constraint firstItem="8rG-T0-JpK" firstAttribute="top" secondItem="AQ7-3I-hCj" secondAttribute="bottom" constant="-7.5" id="YYA-9b-8on"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8rG-T0-JpK" secondAttribute="trailing" constant="16" id="eSP-Oa-8cK"/>
+                            <constraint firstItem="AQ7-3I-hCj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eX7-mY-zad"/>
+                            <constraint firstItem="AQ7-3I-hCj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fnX-2r-OTm"/>
+                            <constraint firstItem="8rG-T0-JpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pTT-Gq-D4f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
 </document>

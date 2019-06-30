@@ -83,6 +83,11 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,6 +97,11 @@
                                     <constraint firstAttribute="trailing" secondItem="daP-tN-Yz9" secondAttribute="trailing" id="gtX-do-5Mm"/>
                                     <constraint firstItem="daP-tN-Yz9" firstAttribute="leading" secondItem="zXv-5d-8n9" secondAttribute="leading" id="sAR-Dk-2JK"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVb-om-yWq">
                                 <rect key="frame" x="361" y="14" width="30" height="48"/>
@@ -406,6 +416,11 @@
                                     <constraint firstItem="Fvy-5q-FbH" firstAttribute="top" secondItem="jQX-yC-2eb" secondAttribute="bottom" constant="35.5" id="wEt-hj-nde"/>
                                     <constraint firstItem="jQX-yC-2eb" firstAttribute="top" secondItem="CLk-qq-Alg" secondAttribute="bottom" constant="35.5" id="znd-we-LSz"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.28235294119999998" green="0.45098039220000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -510,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyF-0W-R9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="-1629"/>
+            <point key="canvasLocation" x="1613" y="-1662"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tMV-7a-YIu">
@@ -529,7 +544,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTp-o5-A4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="-607"/>
+            <point key="canvasLocation" x="1614" y="-599"/>
         </scene>
         <!--Transactions-->
         <scene sceneID="FXm-tJ-bYf">
@@ -575,7 +590,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdo-bY-tWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062.3188405797105" y="131.25"/>
+            <point key="canvasLocation" x="3061" y="132"/>
         </scene>
     </scenes>
     <resources>

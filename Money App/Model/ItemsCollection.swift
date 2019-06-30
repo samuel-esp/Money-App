@@ -11,22 +11,26 @@ import UIKit
 class ItemsCollection: NSObject {
     
     var itemArray = [Item]()
+    let itemArchive: URL = {
+
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("items.archives")
+        
+    }()
 
     @discardableResult func createItem(name: String, date: Date, valueDollars: Double, isGain: Bool) -> Item{
         
         let item = Item(name: name, date: date, valueDollars: valueDollars, isGain: isGain)
-        
         itemArray.append(item)
-        
         return item
+        
     }
     
     func deleteItem(item: Item){
         
         if let itemIndex = itemArray.index(of: item){
-
             itemArray.remove(at: itemIndex)
-            
         }
         
     }
@@ -36,15 +40,23 @@ class ItemsCollection: NSObject {
         if fromIndex == toIndex{
             return
         }
-        
         let movedItem = itemArray.remove(at: fromIndex)
         itemArray.insert(movedItem, at: toIndex)
-    
+        
     }
     
     
     override init() {
         super.init()
+        if let archived = NSKeyedUnarchiver.unarchiveObject(withFile: itemArchive.path) as? [Item]{
+            itemArray = archived
+        }
     }
+    
+    func save() -> Bool{
+        return NSKeyedArchiver.archiveRootObject(itemArray, toFile: itemArchive.path)
+    }
+    
+
     
 }
