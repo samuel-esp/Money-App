@@ -33,13 +33,14 @@ class SecondViewController: UIViewController {
         min = user.savings
         max = user.savings
         labelValue.text = "\(available())$"
-        user.savings = available()
         usernameLabel.text = "Hey \(user.user)!!"
         totalTransactionsValue.text = "\(transactionsNumber())"
         gainValue.text = "\(gainTransactions())"
         lossValue.text = "\(lossTransactions())"
         balanceValue.text = "\(maximumPeak()) $"
         balanceMinimum.text = "\(minimumPeak()) $"
+        min = minimumPeak()
+        max = maximumPeak()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +51,6 @@ class SecondViewController: UIViewController {
         lossValue.text = "\(lossTransactions())"
         balanceValue.text = "\(maximumPeak()) $"
         balanceMinimum.text = "\(minimumPeak()) $"
-        user.savings = available()
     }
     
     func available() -> Double{
@@ -87,7 +87,7 @@ class SecondViewController: UIViewController {
             return available()
         }
         else{
-            return user.savings
+            return max
         }
         
     }
@@ -98,7 +98,7 @@ class SecondViewController: UIViewController {
             return available()
         }
         else{
-            return user.savings
+            return min
         }
         
     }
