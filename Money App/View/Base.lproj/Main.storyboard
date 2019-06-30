@@ -434,48 +434,6 @@
             </objects>
             <point key="canvasLocation" x="3060.8695652173915" y="900.66964285714278"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="w8h-5h-8V2">
-            <objects>
-                <viewController id="Iw7-vK-iJP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bhe-Lg-r1W">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHu-Pt-hvw">
-                                <rect key="frame" x="165" y="364" width="85" height="168"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="140"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm7-O7-huM">
-                                <rect key="frame" x="133" y="540" width="159" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.28235294117647058" green="0.45098039215686275" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="H98-p5-y7p" firstAttribute="trailing" secondItem="wm7-O7-huM" secondAttribute="trailing" constant="122" id="EB4-x4-yJd"/>
-                            <constraint firstItem="H98-p5-y7p" firstAttribute="bottom" secondItem="wm7-O7-huM" secondAttribute="bottom" constant="286" id="Tg9-Rt-Q1q"/>
-                            <constraint firstItem="wm7-O7-huM" firstAttribute="leading" secondItem="H98-p5-y7p" secondAttribute="leading" constant="133" id="WRa-qA-ixA"/>
-                            <constraint firstItem="H98-p5-y7p" firstAttribute="trailing" secondItem="DHu-Pt-hvw" secondAttribute="trailing" constant="164" id="bTB-Io-erp"/>
-                            <constraint firstItem="DHu-Pt-hvw" firstAttribute="top" secondItem="H98-p5-y7p" secondAttribute="top" constant="320" id="exe-mC-8QZ"/>
-                            <constraint firstItem="DHu-Pt-hvw" firstAttribute="leading" secondItem="H98-p5-y7p" secondAttribute="leading" constant="165" id="ilE-da-iL1"/>
-                            <constraint firstItem="wm7-O7-huM" firstAttribute="top" secondItem="DHu-Pt-hvw" secondAttribute="bottom" constant="8" id="ra2-MK-Njt"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="H98-p5-y7p"/>
-                    </view>
-                    <connections>
-                        <segue destination="upM-gW-Juh" kind="show" identifier="firstAccess" id="xCx-9d-gtI"/>
-                        <segue destination="hgH-mW-aLO" kind="show" identifier="tabBarSegue" id="0Rl-dW-wgz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HIN-1u-GMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1528" y="-2548"/>
-        </scene>
         <!--First Access View Controller-->
         <scene sceneID="2Wa-gC-0x4">
             <objects>
@@ -552,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyF-0W-R9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="-1590"/>
+            <point key="canvasLocation" x="1528" y="-1629"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tMV-7a-YIu">
@@ -625,7 +583,6 @@
         <image name="userBlu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OYj-6o-N9Z"/>
         <segue reference="Sry-rx-s7Q"/>
     </inferredMetricsTieBreakers>
 </document>
