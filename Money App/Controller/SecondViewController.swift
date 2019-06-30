@@ -33,6 +33,7 @@ class SecondViewController: UIViewController {
         min = user.savings
         max = user.savings
         labelValue.text = "\(available())$"
+        user.savings = available()
         usernameLabel.text = "Hey \(user.user)!!"
         totalTransactionsValue.text = "\(transactionsNumber())"
         gainValue.text = "\(gainTransactions())"
@@ -49,6 +50,7 @@ class SecondViewController: UIViewController {
         lossValue.text = "\(lossTransactions())"
         balanceValue.text = "\(maximumPeak()) $"
         balanceMinimum.text = "\(minimumPeak()) $"
+        user.savings = available()
     }
     
     func available() -> Double{

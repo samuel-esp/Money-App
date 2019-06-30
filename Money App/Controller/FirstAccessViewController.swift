@@ -11,6 +11,7 @@ import UIKit
 class FirstAccessViewController: UIViewController {
     
     var itemsCollection: ItemsCollection!
+    var user: Username!
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var savingsTextField: UITextField!
@@ -23,6 +24,8 @@ class FirstAccessViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         
+        let result = save()
+        print(result)
         performSegue(withIdentifier: "firstVC", sender: self)
         
         
@@ -35,7 +38,8 @@ class FirstAccessViewController: UIViewController {
             if let name = nameTextField.text, let savings = savingsTextField.text{
                 
                 let savingsDouble = Double(savings)
-                let user = Username(user: name, savings: savingsDouble!)
+                user.user = name
+                user.savings = savingsDouble!
                 let barViewControllers = segue.destination as! UITabBarController
                 let navControllerOne = barViewControllers.viewControllers![0] as! UINavigationController
                 let navControllerTwo = barViewControllers.viewControllers![1] as! UINavigationController
@@ -47,8 +51,7 @@ class FirstAccessViewController: UIViewController {
                 secondVC.items = itemsCollection
                 
             }else{
-                
-                let user = Username(user: "", savings: 0.0)
+  
                 let barViewControllers = segue.destination as! UITabBarController
                 let secondVC = barViewControllers.viewControllers![1] as! SecondViewController
                 let firstVC = barViewControllers.viewControllers![0] as! ViewController
@@ -64,6 +67,17 @@ class FirstAccessViewController: UIViewController {
             
     
         }
+    
+    func save() -> Bool{
+        return NSKeyedArchiver.archiveRootObject(user, toFile: user.userArchive.path)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let result = save()
+        if(result){
+            print(result)
+        }
+    }
         
         
 }

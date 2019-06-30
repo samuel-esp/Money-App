@@ -13,18 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let itemsCollection = ItemsCollection()
+    var user = Username(user: "Unknown", savings: 0.0)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        if !UserDefaults.standard.bool(forKey: "isFirstTime"){
-        UserDefaults.standard.set(true, forKey: "isFirstTime")
+
+        if !UserDefaults.standard.bool(forKey: "aasff"){
+        UserDefaults.standard.set(true, forKey: "aasff")
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let firstAccessVC = storyboard.instantiateViewController(withIdentifier: "firstAccess") as! FirstAccessViewController
         self.window?.rootViewController = firstAccessVC
         firstAccessVC.itemsCollection = itemsCollection
+        firstAccessVC.user = user
         
         }else{
+            loadUsername()
             window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController
@@ -34,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let firstVC = firstNav.viewControllers[0] as! ViewController
             let secondVC = secondNav.viewControllers[0] as! SecondViewController
             firstVC.itemsCollection = itemsCollection
+            firstVC.user = user
             secondVC.items = itemsCollection
+            secondVC.user = user
         }
         
         return true
@@ -68,6 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("saved")
         }
         
+    }
+    
+    func loadUsername(){
+        if let archived = NSKeyedUnarchiver.unarchiveObject(withFile: user.userArchive.path) as? Username{
+            user = archived
+        }
+
     }
 
 
